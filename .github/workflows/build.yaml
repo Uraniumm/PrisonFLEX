@@ -107,7 +107,7 @@ jobs:
             --repo '${{ github.repository }}' \
             --verify-tag \
             --notes "" \
-            --title "Release $TAG"
+            --title "${TAG}-Release"
       - name: Upload artifacts to GitHub Release
         if: |
           (github.event_name == 'workflow_dispatch' && inputs.create_release) ||
