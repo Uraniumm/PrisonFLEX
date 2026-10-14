@@ -1,6 +1,6 @@
 Package: com.jailedutils.prisonflex
 Name: PrisonFLEX
-Version: 0.0.6
+Version: 0.0.7
 Architecture: iphoneos-arm
 Description: FLEX and FLEX loader all in one.
 Maintainer: Sam Hyde
