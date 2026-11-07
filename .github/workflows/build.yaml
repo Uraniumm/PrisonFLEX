@@ -86,6 +86,14 @@ jobs:
             '${{ github.event.inputs.flex_repo }}' \
             '${{ github.event.inputs.flex_branch }}' \
             '${{ github.event.inputs.build_target }}'
+      - name: Upload test build artifacts
+        if: github.event_name == 'workflow_dispatch' && !inputs.create_release
+        uses: actions/upload-artifact@v4
+        with:
+            name: FLEX-test-${{ github.run_number }}
+            path: packages/*
+            if-no-files-found: error
+            retention-days: 7
       - name: Create version tag
         if: github.event_name == 'workflow_dispatch' && inputs.create_release
         env:
